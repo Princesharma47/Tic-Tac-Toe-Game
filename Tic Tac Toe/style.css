@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+
+.container {
+    text-align: center;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    margin: 20px 0;
+}
+
+.cell {
+    background: white;
+    border: 2px solid #333;
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cell:hover {
+    background-color: #ddd;
+}
+
+.cell.x {
+    color: rgb(35, 9, 9);
+}
+
+.cell.o {
+    color: red;
+}
+
+button {
+    padding: 8px 15px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Winning animation */
+@keyframes winAnimation {
+    0% {
+        background-color: #fff;
+        transform: scale(1);
+    }
+    50% {
+        background-color: #90ee90;
+        transform: scale(1.1);
+    }
+    100% {
+        background-color: #90ee90;
+        transform: scale(1);
+    }
+}
+
+.win {
+    animation: winAnimation 0.6s ease-in-out infinite alternate;
+}
